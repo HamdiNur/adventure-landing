@@ -9,9 +9,9 @@
   --color-signal: #FF6B4A;
 }
 
-html {
+/* html {
   scroll-behavior: smooth;
-}
+} */
 
 body {
   background-color: var(--color-cloud);

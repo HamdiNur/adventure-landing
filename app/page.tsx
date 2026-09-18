@@ -1,3 +1,5 @@
+import SmoothScroll from "@/components/SmoothScroll";
+import ScrollProgress from "@/components/ScrollProgress";
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import Skydive from "@/components/Skydive";
@@ -9,15 +11,18 @@ import AltitudeCounter from "@/components/AltitudeCounter";
 
 export default function Home() {
   return (
-    <main>
-      <Nav />
-      <AltitudeCounter />
-      <Hero />
-      <Skydive />
-      <Transition />
-      <Dive />
-      <Trust />
-      <Booking />
-    </main>
+    <SmoothScroll>
+      <main>
+        <ScrollProgress />
+        <Nav />
+        <AltitudeCounter />
+        <Hero />
+        <Skydive />
+        <Transition />
+        <Dive />
+        <Trust />
+        <Booking />
+      </main>
+    </SmoothScroll>
   );
 }
