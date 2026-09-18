@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-
+import { CloudParticles } from "@/components/Particles";
 const packages = [
   {
     altitude: "4,000m",
@@ -27,6 +27,7 @@ export default function Skydive() {
       id="skydive"
       className="relative min-h-screen px-6 md:px-16 py-24 overflow-hidden"
     >
+      <CloudParticles count={4} />
       <Image
         src="/images/skydive-canopy.jpg"
         alt="Parachute canopy open against the sky"

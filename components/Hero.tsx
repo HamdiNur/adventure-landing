@@ -2,10 +2,12 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { CloudParticles } from "@/components/Particles";
 
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-16 overflow-hidden">
+      <CloudParticles count={5} />
       <Image
         src="/images/skydive-hero.jpg"
         alt="Skydiver in freefall against open sky"

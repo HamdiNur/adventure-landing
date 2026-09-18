@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-
+import { BubbleParticles } from "@/components/Particles";
 const packages = [
   {
     depth: "-12m",
@@ -27,6 +27,7 @@ export default function Dive() {
       id="dive"
       className="relative min-h-screen px-6 md:px-16 py-24 overflow-hidden"
     >
+      <BubbleParticles count={14} />
       <Image
         src="/images/dive-wreck.jpg"
         alt="Diver exploring a sunken wreck"

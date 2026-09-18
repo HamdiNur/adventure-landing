@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-
+import { BubbleParticles } from "@/components/Particles";
 const stats = [
   { value: "12,000+", label: "Jumps and dives completed" },
   { value: "18", label: "Years operating" },
@@ -12,6 +12,7 @@ const stats = [
 export default function Trust() {
   return (
     <section className="relative px-6 md:px-16 py-24 overflow-hidden">
+      <BubbleParticles count={10} />
       <Image
         src="/images/dive-hero.jpg"
         alt="Diver near coral reef"
