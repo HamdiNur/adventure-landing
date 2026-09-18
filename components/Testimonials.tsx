@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Slider from "react-slick";
+import { FaChevronLeft, FaChevronRight, FaQuoteLeft } from "react-icons/fa";
 
 const testimonials = [
   {
@@ -29,9 +31,53 @@ const testimonials = [
   },
 ];
 
-export default function Testimonials() {
+function NextArrow({ onClick }: { onClick?: () => void }) {
   return (
-    <section className="bg-abyss px-6 md:px-16 py-24 border-t border-white/10 overflow-hidden">
+    <button
+      onClick={onClick}
+      aria-label="Next testimonial"
+      className="absolute -bottom-14 right-6 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-white hover:bg-signal hover:border-signal transition-colors"
+    >
+      <FaChevronRight size={14} />
+    </button>
+  );
+}
+
+function PrevArrow({ onClick }: { onClick?: () => void }) {
+  return (
+    <button
+      onClick={onClick}
+      aria-label="Previous testimonial"
+      className="absolute -bottom-14 right-20 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-white hover:bg-signal hover:border-signal transition-colors"
+    >
+      <FaChevronLeft size={14} />
+    </button>
+  );
+}
+
+export default function Testimonials() {
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 700,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    pauseOnHover: true,
+    arrows: true,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: { slidesToShow: 1 },
+      },
+    ],
+  };
+
+  return (
+    <section className="bg-abyss px-6 md:px-16 py-24 border-t border-white/10">
       <motion.h2
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -42,29 +88,27 @@ export default function Testimonials() {
         From people who fell before you.
       </motion.h2>
 
-      <div className="mt-14 flex gap-6 overflow-x-auto pb-6 -mx-6 px-6 md:-mx-16 md:px-16 snap-x snap-mandatory scrollbar-hide">
-        {testimonials.map((t, i) => (
-          <motion.div
-            key={t.name}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-10%" }}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="snap-start shrink-0 w-[85vw] sm:w-[420px] rounded-2xl border border-white/15 bg-white/5 p-7"
-          >
-            <p className="font-[family-name:var(--font-ibm-plex)] text-white/90 text-lg leading-relaxed">
-              &ldquo;{t.quote}&rdquo;
-            </p>
-            <div className="mt-6">
-              <p className="font-[family-name:var(--font-space-grotesk)] text-white font-medium">
-                {t.name}
-              </p>
-              <p className="text-signal text-sm font-[family-name:var(--font-ibm-plex)]">
-                {t.activity}
-              </p>
+      <div className="mt-14 relative pb-16 testimonial-slider">
+        <Slider {...settings}>
+          {testimonials.map((t) => (
+            <div key={t.name} className="px-3">
+              <div className="rounded-2xl border border-white/15 bg-white/5 p-7 h-full">
+                <FaQuoteLeft className="text-signal" size={20} />
+                <p className="mt-4 font-[family-name:var(--font-ibm-plex)] text-white/90 text-lg leading-relaxed">
+                  {t.quote}
+                </p>
+                <div className="mt-6">
+                  <p className="font-[family-name:var(--font-space-grotesk)] text-white font-medium">
+                    {t.name}
+                  </p>
+                  <p className="text-signal text-sm font-[family-name:var(--font-ibm-plex)]">
+                    {t.activity}
+                  </p>
+                </div>
+              </div>
             </div>
-          </motion.div>
-        ))}
+          ))}
+        </Slider>
       </div>
     </section>
   );

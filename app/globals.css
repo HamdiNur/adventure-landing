@@ -1,5 +1,6 @@
 @import "tailwindcss";
-
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
 @theme {
   --color-cloud: #EAF3F7;
   --color-sky: #3E7CA6;
@@ -23,4 +24,16 @@ body {
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+.testimonial-slider .slick-slide {
+  height: auto;
+}
+.testimonial-slider .slick-track {
+  display: flex;
+  align-items: stretch;
+}
+.testimonial-slider .slick-prev::before,
+.testimonial-slider .slick-next::before {
+  content: none;
 }
