@@ -14,10 +14,38 @@ const ibmPlexSans = IBM_Plex_Sans({
   weight: ["400", "500", "600"],
 });
 
+const siteUrl = "https://adventure-landing.vercel.app"; // update after deploying
+
 export const metadata: Metadata = {
-  title: "Freefall to Deep Blue | Adventure Sports",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Freefall to Deep Blue | Skydiving & Scuba Diving",
+    template: "%s | Freefall to Deep Blue",
+  },
   description:
-    "Tandem skydives from 6,000m and guided reef dives 40m below the surface.",
+    "Tandem skydives from 6,000m and guided reef dives 40m below the surface. Book your descent — no experience required.",
+  keywords: [
+    "skydiving",
+    "scuba diving",
+    "tandem jump",
+    "reef dive",
+    "adventure sports",
+    "extreme sports booking",
+  ],
+  openGraph: {
+    title: "Freefall to Deep Blue | Skydiving & Scuba Diving",
+    description:
+      "Tandem skydives from 6,000m and guided reef dives 40m below the surface.",
+    url: siteUrl,
+    siteName: "Freefall to Deep Blue",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Freefall to Deep Blue | Skydiving & Scuba Diving",
+    description:
+      "Tandem skydives from 6,000m and guided reef dives 40m below the surface.",
+  },
 };
 
 export default function RootLayout({
