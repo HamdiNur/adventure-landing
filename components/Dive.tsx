@@ -3,21 +3,25 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { BubbleParticles } from "@/components/Particles";
+
 const packages = [
   {
     depth: "-12m",
     name: "Reef Discovery",
     desc: "A guided shallow-reef dive for first-timers. No certification required.",
+    price: "$120",
   },
   {
     depth: "-25m",
     name: "Open Water",
     desc: "Certified dive along the outer reef wall, with drift currents and coral canyons.",
+    price: "$180",
   },
   {
     depth: "-40m",
     name: "Wreck Descent",
     desc: "Advanced dive to a sunken vessel resting on the sea floor.",
+    price: "$260",
   },
 ];
 
@@ -59,7 +63,7 @@ export default function Dive() {
             <span className="font-[family-name:var(--font-space-grotesk)] text-2xl text-signal w-24 shrink-0 tabular-nums">
               {pkg.depth}
             </span>
-            <div>
+            <div className="flex-1">
               <h3 className="font-[family-name:var(--font-space-grotesk)] text-xl font-medium text-white">
                 {pkg.name}
               </h3>
@@ -67,6 +71,9 @@ export default function Dive() {
                 {pkg.desc}
               </p>
             </div>
+            <span className="font-[family-name:var(--font-space-grotesk)] text-2xl font-semibold text-white shrink-0 tabular-nums">
+              {pkg.price}
+            </span>
           </motion.div>
         ))}
       </div>

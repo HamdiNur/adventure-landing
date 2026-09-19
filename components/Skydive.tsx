@@ -3,21 +3,25 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { CloudParticles } from "@/components/Particles";
+
 const packages = [
   {
     altitude: "4,000m",
     name: "Tandem Jump",
     desc: "Strapped to a certified instructor for your first freefall. No experience needed.",
+    price: "$249",
   },
   {
     altitude: "4,500m",
     name: "Accelerated Freefall",
     desc: "Solo-progression course for those working toward a skydiving license.",
+    price: "$1,850",
   },
   {
     altitude: "6,000m",
     name: "High Altitude Jump",
     desc: "Extended freefall time with oxygen briefing, for licensed jumpers only.",
+    price: "$395",
   },
 ];
 
@@ -27,7 +31,7 @@ export default function Skydive() {
       id="skydive"
       className="relative min-h-screen px-6 md:px-16 py-24 overflow-hidden"
     >
-      <CloudParticles count={4} />
+      <CloudParticles count={5} />
       <Image
         src="/images/skydive-canopy.jpg"
         alt="Parachute canopy open against the sky"
@@ -59,7 +63,7 @@ export default function Skydive() {
             <span className="font-[family-name:var(--font-space-grotesk)] text-2xl text-signal w-28 shrink-0 tabular-nums">
               {pkg.altitude}
             </span>
-            <div>
+            <div className="flex-1">
               <h3 className="font-[family-name:var(--font-space-grotesk)] text-xl font-medium text-highalt">
                 {pkg.name}
               </h3>
@@ -67,6 +71,9 @@ export default function Skydive() {
                 {pkg.desc}
               </p>
             </div>
+            <span className="font-[family-name:var(--font-space-grotesk)] text-2xl font-semibold text-highalt shrink-0 tabular-nums">
+              {pkg.price}
+            </span>
           </motion.div>
         ))}
       </div>

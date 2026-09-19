@@ -1,18 +1,44 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { motion, useInView, animate } from "framer-motion";
 import Image from "next/image";
-import { BubbleParticles } from "@/components/Particles";
+
 const stats = [
-  { value: "12,000+", label: "Jumps and dives completed" },
-  { value: "18", label: "Years operating" },
-  { value: "0", label: "Serious incidents on record" },
+  { value: 12000, suffix: "+", label: "Jumps and dives completed" },
+  { value: 18, suffix: "", label: "Years operating" },
+  { value: 0, suffix: "", label: "Serious incidents on record" },
 ];
+
+function CountUp({ value, suffix }: { value: number; suffix: string }) {
+  const ref = useRef<HTMLParagraphElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-10%" });
+  const [display, setDisplay] = useState(0);
+
+  useEffect(() => {
+    if (!isInView) return;
+    const controls = animate(0, value, {
+      duration: 1.8,
+      ease: "easeOut",
+      onUpdate: (v) => setDisplay(Math.round(v)),
+    });
+    return () => controls.stop();
+  }, [isInView, value]);
+
+  return (
+    <p
+      ref={ref}
+      className="font-[family-name:var(--font-space-grotesk)] text-4xl md:text-5xl font-semibold text-white tabular-nums"
+    >
+      {display.toLocaleString()}
+      {suffix}
+    </p>
+  );
+}
 
 export default function Trust() {
   return (
     <section className="relative px-6 md:px-16 py-24 overflow-hidden">
-      <BubbleParticles count={10} />
       <Image
         src="/images/dive-hero.jpg"
         alt="Diver near coral reef"
@@ -42,9 +68,7 @@ export default function Trust() {
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 0.5, delay: i * 0.1 }}
           >
-            <p className="font-[family-name:var(--font-space-grotesk)] text-4xl md:text-5xl font-semibold text-white tabular-nums">
-              {stat.value}
-            </p>
+            <CountUp value={stat.value} suffix={stat.suffix} />
             <p className="mt-2 text-white/60 font-[family-name:var(--font-ibm-plex)]">
               {stat.label}
             </p>
