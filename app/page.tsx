@@ -5,6 +5,7 @@ import Hero from "@/components/Hero";
 import Skydive from "@/components/Skydive";
 import Transition from "@/components/Transition";
 import Dive from "@/components/Dive";
+import Instructors from "@/components/Instructors";
 import Trust from "@/components/Trust";
 import Testimonials from "@/components/Testimonials";
 import Location from "@/components/Location";
@@ -24,6 +25,7 @@ export default function Home() {
         <Skydive />
         <Transition />
         <Dive />
+        <Instructors />
         <Trust />
         <Testimonials />
         <Location />
