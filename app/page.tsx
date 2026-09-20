@@ -1,3 +1,4 @@
+import MotionProvider from "@/components/MotionProvider";
 import SmoothScroll from "@/components/SmoothScroll";
 import ScrollProgress from "@/components/ScrollProgress";
 import Nav from "@/components/Nav";
@@ -16,23 +17,25 @@ import AltitudeCounter from "@/components/AltitudeCounter";
 
 export default function Home() {
   return (
-    <SmoothScroll>
-      <main>
-        <ScrollProgress />
-        <Nav />
-        <AltitudeCounter />
-        <Hero />
-        <Skydive />
-        <Transition />
-        <Dive />
-        <Instructors />
-        <Trust />
-        <Testimonials />
-        <Location />
-        <Gallery />
-        <Faq />
-        <Booking />
-      </main>
-    </SmoothScroll>
+    <MotionProvider>
+      <SmoothScroll>
+        <main>
+          <ScrollProgress />
+          <Nav />
+          <AltitudeCounter />
+          <Hero />
+          <Skydive />
+          <Transition />
+          <Dive />
+          <Instructors />
+          <Trust />
+          <Testimonials />
+          <Location />
+          <Gallery />
+          <Faq />
+          <Booking />
+        </main>
+      </SmoothScroll>
+    </MotionProvider>
   );
 }
