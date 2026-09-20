@@ -8,7 +8,6 @@ import {
   AnimatePresence,
 } from "framer-motion";
 import { Menu, X } from "lucide-react";
-
 const links = [
   { href: "#skydive", label: "Skydive packages" },
   { href: "#dive", label: "Dive packages" },

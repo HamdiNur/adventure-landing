@@ -7,6 +7,7 @@ import Transition from "@/components/Transition";
 import Dive from "@/components/Dive";
 import Trust from "@/components/Trust";
 import Testimonials from "@/components/Testimonials";
+import Location from "@/components/Location";
 import Faq from "@/components/Faq";
 import Booking from "@/components/Booking";
 import AltitudeCounter from "@/components/AltitudeCounter";
@@ -24,6 +25,7 @@ export default function Home() {
         <Dive />
         <Trust />
         <Testimonials />
+        <Location />
         <Faq />
         <Booking />
       </main>
