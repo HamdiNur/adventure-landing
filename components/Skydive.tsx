@@ -1,30 +1,8 @@
 "use client";
-
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { CloudParticles } from "@/components/Particles";
-
-const packages = [
-  {
-    altitude: "4,000m",
-    name: "Tandem Jump",
-    desc: "Strapped to a certified instructor for your first freefall. No experience needed.",
-    price: "$249",
-  },
-  {
-    altitude: "4,500m",
-    name: "Accelerated Freefall",
-    desc: "Solo-progression course for those working toward a skydiving license.",
-    price: "$1,850",
-  },
-  {
-    altitude: "6,000m",
-    name: "High Altitude Jump",
-    desc: "Extended freefall time with oxygen briefing, for licensed jumpers only.",
-    price: "$395",
-  },
-];
-
+import { skydivePackages as packages } from "@/lib/packages";
 export default function Skydive() {
   return (
     <section
