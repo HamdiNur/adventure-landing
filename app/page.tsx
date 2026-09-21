@@ -12,6 +12,7 @@ import Testimonials from "@/components/Testimonials";
 import Location from "@/components/Location";
 import Gallery from "@/components/Gallery";
 import Faq from "@/components/Faq";
+import Contact from "@/components/Contact";
 import Booking from "@/components/Booking";
 import AltitudeCounter from "@/components/AltitudeCounter";
 
@@ -33,6 +34,7 @@ export default function Home() {
           <Location />
           <Gallery />
           <Faq />
+          <Contact />
           <Booking />
         </main>
       </SmoothScroll>
