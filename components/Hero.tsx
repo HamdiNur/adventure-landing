@@ -1,13 +1,16 @@
+
 "use client";
 
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { CloudParticles } from "@/components/Particles";
+import WeatherWidget from "@/components/WeatherWidget";
 
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-16 overflow-hidden">
       <CloudParticles count={5} />
+
       <Image
         src="/images/skydive-hero.jpg"
         alt="Skydiver in freefall against open sky"
@@ -15,6 +18,7 @@ export default function Hero() {
         priority
         className="object-cover -z-10"
       />
+
       <div className="absolute inset-0 bg-highalt/40 -z-10" />
 
       <motion.p
@@ -25,6 +29,11 @@ export default function Hero() {
       >
         Two ways to fall
       </motion.p>
+
+      <div className="mb-6">
+        <WeatherWidget />
+      </div>
+
       <motion.h1
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -35,6 +44,7 @@ export default function Hero() {
         <br />
         Sink into blue.
       </motion.h1>
+
       <motion.p
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
@@ -44,6 +54,7 @@ export default function Hero() {
         Tandem skydives from 6,000 meters and guided reef dives 40 meters
         below the surface. Scroll to feel the drop.
       </motion.p>
+
       <motion.a
         href="#skydive"
         initial={{ opacity: 0 }}
