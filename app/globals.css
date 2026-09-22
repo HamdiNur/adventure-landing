@@ -54,3 +54,19 @@ body {
   background: var(--color-signal);
   color: white;
 }
+@layer base {
+  button,
+  a {
+    transition: transform 0.15s ease;
+  }
+  button:active,
+  a:active {
+    transform: scale(0.97);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-signal);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
