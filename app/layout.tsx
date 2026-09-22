@@ -48,6 +48,22 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SportsActivityLocation",
+  name: "Freefall to Deep Blue",
+  description:
+    "Tandem skydiving and guided scuba diving experiences, from 6,000m altitude jumps to 40m reef and wreck dives.",
+  url: siteUrl,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Mogadishu",
+    addressCountry: "SO",
+  },
+  priceRange: "$120-$1850",
+  sameAs: [], // add real social media URLs here once you have them
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -56,6 +72,10 @@ export default function RootLayout({
       <body
         className={`${spaceGrotesk.variable} ${ibmPlexSans.variable} antialiased`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {children}
       </body>
     </html>
