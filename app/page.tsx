@@ -7,6 +7,7 @@ import Skydive from "@/components/Skydive";
 import Transition from "@/components/Transition";
 import Dive from "@/components/Dive";
 import Instructors from "@/components/Instructors";
+import TrustBadges from "@/components/TrustBadges";
 import Trust from "@/components/Trust";
 import Testimonials from "@/components/Testimonials";
 import Location from "@/components/Location";
@@ -29,6 +30,7 @@ export default function Home() {
           <Transition />
           <Dive />
           <Instructors />
+          <TrustBadges />
           <Trust />
           <Testimonials />
           <Location />
