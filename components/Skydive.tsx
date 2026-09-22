@@ -36,7 +36,7 @@ export default function Skydive() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="flex flex-col md:flex-row md:items-center gap-2 md:gap-8 py-8"
+            className="flex flex-col md:flex-row md:items-center gap-2 md:gap-8 py-8 whileHover={{ x: 6 }}"
           >
             <span className="font-[family-name:var(--font-space-grotesk)] text-2xl text-signal w-28 shrink-0 tabular-nums">
               {pkg.altitude}

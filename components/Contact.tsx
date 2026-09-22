@@ -80,6 +80,8 @@ export default function Contact() {
           href={`mailto:${EMAIL}`}
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
+          whileHover={{ y: -4 }}
+          whileTap={{ scale: 0.97 }}
           viewport={{ once: true, margin: "-10%" }}
           transition={{ duration: 0.5, delay: 0.2 }}
           className="flex items-center gap-3 rounded-xl border border-highalt/15 bg-white px-5 py-4 hover:border-signal transition-colors"

@@ -42,7 +42,7 @@ export default function Location() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="rounded-2xl overflow-hidden border border-highalt/15 bg-white"
+            className="rounded-2xl overflow-hidden border border-highalt/15 bg-white whileHover={{ y: -6 }}"
           >
             <div className="aspect-video w-full">
               <iframe

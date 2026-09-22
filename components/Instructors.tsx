@@ -20,7 +20,7 @@ const instructors = [
   },
   {
     photo: "/images/instructor-3.jpg",
-    name: "Yusuf Ali",
+    name: "Hamda Nur",
     role: "AFF & Wreck Dive Specialist",
     creds: "USPA & PADI Certified · dual-licensed",
     years: "7 years",
@@ -48,7 +48,7 @@ export default function Instructors() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="rounded-2xl overflow-hidden bg-white/5 border border-white/10"
+            className="rounded-2xl overflow-hidden bg-white/5 border border-white/10 whileHover={{ y: -6 }}"
           >
             <div className="relative aspect-[4/5] w-full">
               <Image

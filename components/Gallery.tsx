@@ -45,6 +45,7 @@ export default function Gallery() {
             onClick={() => setActiveIndex(i)}
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
+            whileTap={{ scale: 0.95 }}
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 0.4, delay: (i % 4) * 0.08 }}
             className="relative aspect-square overflow-hidden rounded-xl group"

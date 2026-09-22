@@ -32,6 +32,7 @@ export default function TrustBadges() {
               key={badge.title}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ y: -4 }}
               viewport={{ once: true, margin: "-10%" }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="flex flex-col items-start"
