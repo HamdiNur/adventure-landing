@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { BubbleParticles } from "@/components/Particles";
 import { divePackages as packages } from "@/lib/packages";
-
+import { blurDataURL } from "@/lib/blur";
 export default function Dive() {
   return (
     <section
@@ -13,12 +13,14 @@ export default function Dive() {
     >
       <BubbleParticles count={14} />
 
-      <Image
-        src="/images/dive-wreck.jpg"
-        alt="Diver exploring a sunken wreck"
-        fill
-        className="object-cover -z-20"
-      />
+<Image
+  src="/images/dive-wreck.jpg"
+  alt="Diver exploring a sunken wreck"
+  fill
+  placeholder="blur"
+  blurDataURL={blurDataURL.ocean}
+  className="object-cover -z-20"
+/>
 
       <div className="absolute inset-0 bg-gradient-to-b from-shallow/90 to-abyss/90 -z-10" />
 

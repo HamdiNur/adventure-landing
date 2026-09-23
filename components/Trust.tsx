@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView, animate } from "framer-motion";
 import Image from "next/image";
-
+import { blurDataURL } from "@/lib/blur";
 const stats = [
   { value: 12000, suffix: "+", label: "Jumps and dives completed" },
   { value: 18, suffix: "", label: "Years operating" },
@@ -39,12 +39,14 @@ function CountUp({ value, suffix }: { value: number; suffix: string }) {
 export default function Trust() {
   return (
     <section className="relative px-6 md:px-16 py-24 overflow-hidden">
-      <Image
-        src="/images/dive-hero.jpg"
-        alt="Diver near coral reef"
-        fill
-        className="object-cover -z-20"
-      />
+ <Image
+  src="/images/dive-hero.jpg"
+  alt="Diver near coral reef"
+  fill
+  placeholder="blur"
+  blurDataURL={blurDataURL.ocean}
+  className="object-cover -z-20"
+/>
       <div className="absolute inset-0 bg-abyss/90 -z-10" />
 
       <motion.p

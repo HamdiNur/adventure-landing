@@ -5,19 +5,21 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { CloudParticles } from "@/components/Particles";
 import WeatherWidget from "@/components/WeatherWidget";
-
+import { blurDataURL } from "@/lib/blur";
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-16 overflow-hidden">
       <CloudParticles count={5} />
 
-      <Image
-        src="/images/skydive-hero.jpg"
-        alt="Skydiver in freefall against open sky"
-        fill
-        priority
-        className="object-cover -z-10"
-      />
+<Image
+  src="/images/skydive-hero.jpg"
+  alt="Skydiver in freefall against open sky"
+  fill
+  priority
+  placeholder="blur"
+  blurDataURL={blurDataURL.sky}
+  className="object-cover -z-10"
+/>
 
       <div className="absolute inset-0 bg-highalt/40 -z-10" />
 
