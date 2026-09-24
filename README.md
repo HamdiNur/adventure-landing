@@ -81,4 +81,67 @@ adventure-landing/
 - [ ] Add gallery/lightbox for trip photos
 
 ## License
-This project is open source and available under the [MIT License](LICENSE).
+This project is open source and available under the [MIT License](LICENSE).# Freefall to Deep Blue 🪂🌊
+
+A fully animated landing page for an adventure sports brand offering **skydiving** and **scuba diving** experiences. The concept treats both sports as mirror opposites — falling through air vs. sinking through water — and expresses that through a single continuous scroll: a live counter ticks from **6,000m altitude** down through **0m (the surface)** to **-40m depth** as the page transitions from sky to ocean.
+
+**Live demo:** _add your Vercel link here once deployed_
+
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=next.js&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat&logo=tailwindcss&logoColor=white)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-black?style=flat&logo=framer&logoColor=white)
+
+## Features
+
+**Core experience**
+- Scroll-driven altitude/depth counter that ticks live from 6,000m to -40m as you scroll
+- Sky-to-ocean gradient transition with real photography and color overlays
+- Scroll progress bar and Lenis-powered smooth scrolling
+- Drifting cloud and rising bubble particle effects
+- `prefers-reduced-motion` support for accessibility
+
+**Content sections**
+- Dual package listings — "Choose your altitude" (skydiving) and "Choose your depth" (diving), both with live pricing
+- Instructor bios with certifications and years of experience
+- Trust badges (USPA/PADI certification callouts) and animated count-up stats
+- Auto-advancing testimonials carousel (react-slick)
+- Location section with embedded Google Maps for the drop zone and dive center
+- Photo gallery with full-screen lightbox viewer
+- FAQ accordion
+- Live weather/wind-condition widget (Open-Meteo API)
+- Contact section (call, WhatsApp, email)
+
+**Booking**
+- Multi-step booking flow (activity → package → date → confirm) wired to Formspree for real submissions
+
+**Navigation & polish**
+- Responsive nav with scrollspy-based color switching and a full-screen mobile menu
+- Back-to-top button
+- Hover/tap micro-interactions and custom focus-visible outlines
+- Custom 404 page, favicon, and dynamically generated Open Graph image
+- SEO: sitemap, robots.txt, and JSON-LD structured data
+
+## Tech Stack
+
+- **[Next.js 16](https://nextjs.org/)** (App Router) — React framework
+- **TypeScript** — type safety
+- **[Tailwind CSS v4](https://tailwindcss.com/)** — utility-first styling with custom theme tokens
+- **[Framer Motion](https://www.framer.com/motion/)** — scroll-triggered and viewport-based animations
+- **[Lenis](https://lenis.darkroom.engineering/)** — smooth scrolling
+- **[react-slick](https://react-slick.neostack.com/)** — testimonials carousel
+- **[Lucide React](https://lucide.dev/)** + **[React Icons](https://react-icons.github.io/react-icons/)** — icon sets
+- **[Formspree](https://formspree.io/)** — booking form submissions
+- **[Open-Meteo](https://open-meteo.com/)** — live weather data, no API key required
+
+## Getting Started
+
+Clone the repo and install dependencies:
+
+```bash
+git clone https://github.com/HamdiNur/adventure-landing.git
+cd adventure-landing
+npm install
+```
+
+Create a `.env.local` file in the project root with your Formspree endpoint:
