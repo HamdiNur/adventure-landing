@@ -28,7 +28,7 @@ An animated landing page for an adventure sports brand offering **skydiving** an
 - **[Lucide React](https://lucide.dev/)** — icon set
 
 ## Getting Started
-
+--
 Clone the repo and install dependencies:
 
 ```bash
