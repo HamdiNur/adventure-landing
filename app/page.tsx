@@ -16,6 +16,7 @@ import Faq from "@/components/Faq";
 import Contact from "@/components/Contact";
 import Booking from "@/components/Booking";
 import AltitudeCounter from "@/components/AltitudeCounter";
+import BackToTop from "@/components/BackToTop";
 
 export default function Home() {
   return (
@@ -38,6 +39,7 @@ export default function Home() {
           <Faq />
           <Contact />
           <Booking />
+          <BackToTop />
         </main>
       </SmoothScroll>
     </MotionProvider>
